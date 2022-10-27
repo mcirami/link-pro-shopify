@@ -12,9 +12,11 @@ import { ResourcePicker }  from '@shopify/app-bridge/actions';
 import {authenticatedFetch, getSessionToken} from '@shopify/app-bridge-utils';
 
 const config = {
-  apiKey: '0c0c550ed3f1008d7e62c6b2aff0e206',
-  host: new URLSearchParams(location.search).get("host"),
-  forceRedirect: true
+  apiKey: process.env.SHOPIFY_API_KEY,
+  //host: new URLSearchParams(location.search).get("host"),
+  host: process.env.HOST,
+  forceRedirect: true,
+  scope: process.env.SCOPES
 };
 const app = createApp(config);
 
@@ -27,8 +29,6 @@ const client = new ApolloClient({
   }),
   cache: new InMemoryCache(),
 })
-
-console.log(client);
 
 export default function HomePage() {
   const picker = ResourcePicker.create(app, {
@@ -46,15 +46,6 @@ export default function HomePage() {
   return (
     <Page narrowWidth>
       <TitleBar title="App name" primaryAction={null} />
-      <Layout>
-        <Layout.Section>
-          <Card sectioned>
-            <button
-              onClick={openProductModal}
-            >Get Products</button>
-          </Card>
-        </Layout.Section>
-      </Layout>
     </Page>
   );
 }
