@@ -1,5 +1,5 @@
 # Environment Configuration
-web/.env
+.env
 .env.*
 
 # Dependency directory

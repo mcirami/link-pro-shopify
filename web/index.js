@@ -1,10 +1,12 @@
 // @ts-check
+import dotenv from 'dotenv';
+import path from 'path';
 import { join } from "path";
 import { readFileSync } from "fs";
 import express from "express";
 import cookieParser from "cookie-parser";
 import { Shopify, LATEST_API_VERSION } from "@shopify/shopify-api";
-import 'dotenv';
+
 
 import applyAuthMiddleware from "./middleware/auth.js";
 import verifyRequest from "./middleware/verify-request.js";
@@ -16,7 +18,9 @@ import { AppInstallations } from "./app_installations.js";
 
 const USE_ONLINE_TOKENS = false;
 
-const PORT = 8081;//parseInt(process.env.BACKEND_PORT || process.env.PORT, 10);
+dotenv.config({path: path.join('../.env')})
+
+const PORT = parseInt(process.env.BACKEND_PORT || process.env.PORT, 10);
 
 // TODO: There should be provided by env vars
 const DEV_INDEX_PATH = `${process.cwd()}/frontend/`;
@@ -24,7 +28,7 @@ const PROD_INDEX_PATH = `${process.cwd()}/frontend/dist/`;
 
 const DB_PATH = `${process.cwd()}/database.sqlite`;
 
-/*Shopify.Context.initialize({
+Shopify.Context.initialize({
   API_KEY: process.env.SHOPIFY_API_KEY,
   API_SECRET_KEY: process.env.SHOPIFY_API_SECRET,
   SCOPES: process.env.SCOPES.split(","),
@@ -36,13 +40,14 @@ const DB_PATH = `${process.cwd()}/database.sqlite`;
   // See note below regarding using CustomSessionStorage with this template.
   SESSION_STORAGE: new Shopify.Session.SQLiteSessionStorage(DB_PATH),
   ...(process.env.SHOP_CUSTOM_DOMAIN && {CUSTOM_SHOP_DOMAINS: [process.env.SHOP_CUSTOM_DOMAIN]}),
-});*/
+});
+/*
 
 Shopify.Context.initialize({
   API_KEY: "0c0c550ed3f1008d7e62c6b2aff0e206",
   API_SECRET_KEY: "9c586086992b2f522033b6d6be879313",
-  SCOPES: "read_products",
-  HOST_NAME: "app.link.pro",
+  SCOPES: "read_products,write_products",
+  HOST_NAME: "linkpro.fly.dev",
   HOST_SCHEME: "https",
   API_VERSION: LATEST_API_VERSION,
   IS_EMBEDDED_APP: true,
@@ -51,6 +56,7 @@ Shopify.Context.initialize({
   SESSION_STORAGE: new Shopify.Session.SQLiteSessionStorage(DB_PATH),
   ...(process.env.SHOP_CUSTOM_DOMAIN && {CUSTOM_SHOP_DOMAINS: [process.env.SHOP_CUSTOM_DOMAIN]}),
 });
+*/
 
 // NOTE: If you choose to implement your own storage strategy using
 // Shopify.Session.CustomSessionStorage, you MUST implement the optional
