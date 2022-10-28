@@ -42,7 +42,7 @@ Shopify.Context.initialize({
   API_KEY: "0c0c550ed3f1008d7e62c6b2aff0e206",
   API_SECRET_KEY: "9c586086992b2f522033b6d6be879313",
   SCOPES: "read_products",
-  HOST_NAME: "linkpro.fly.dev",
+  HOST_NAME: "app.link.pro",
   HOST_SCHEME: "https",
   API_VERSION: LATEST_API_VERSION,
   IS_EMBEDDED_APP: true,
