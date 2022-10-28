@@ -4,7 +4,6 @@ import {
   Layout,
 } from "@shopify/polaris";
 import { TitleBar } from "@shopify/app-bridge-react";
-
 import {ApolloClient, HttpLink, InMemoryCache} from '@apollo/client';
 import createApp from '@shopify/app-bridge';
 
@@ -44,10 +43,10 @@ export default function HomePage() {
   const openProductModal = () => {
     picker.dispatch(ResourcePicker.Action.OPEN);
   }*/
-
+  console.log(process.env.SCOPES);
   return (
     <Page narrowWidth>
-      <TitleBar title="App name" primaryAction={null} />
+
     </Page>
   );
 }
