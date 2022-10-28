@@ -46,7 +46,7 @@ export default function HomePage() {
   console.log(process.env.SCOPES);
   return (
     <Page narrowWidth>
-
+      <h2>HELLO</h2>
     </Page>
   );
 }
