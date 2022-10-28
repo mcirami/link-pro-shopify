@@ -13,7 +13,7 @@ import {authenticatedFetch, getSessionToken} from '@shopify/app-bridge-utils';
 const config = {
   apiKey: "0c0c550ed3f1008d7e62c6b2aff0e206", //process.env.SHOPIFY_API_KEY,
   //host: new URLSearchParams(location.search).get("host"),
-  host: app.link.pro, //process.env.HOST,
+  host: "app.link.pro", //process.env.HOST,
   forceRedirect: true,
   scope: "read_products,write_products" //process.env.SCOPES
 };
