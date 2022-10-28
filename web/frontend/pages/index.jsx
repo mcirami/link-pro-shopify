@@ -9,6 +9,7 @@ import createApp from '@shopify/app-bridge';
 
 import { ResourcePicker }  from '@shopify/app-bridge/actions';
 import {authenticatedFetch, getSessionToken} from '@shopify/app-bridge-utils';
+/*
 
 const config = {
   apiKey: "0c0c550ed3f1008d7e62c6b2aff0e206", //process.env.SHOPIFY_API_KEY,
@@ -28,6 +29,7 @@ const client = new ApolloClient({
   }),
   cache: new InMemoryCache(),
 })
+*/
 
 export default function HomePage() {
   /*const picker = ResourcePicker.create(app, {
@@ -41,7 +43,7 @@ export default function HomePage() {
   const openProductModal = () => {
     picker.dispatch(ResourcePicker.Action.OPEN);
   }*/
-  console.log(process.env.SCOPES);
+
   return (
     <Page narrowWidth>
       <h2>HELLO</h2>
