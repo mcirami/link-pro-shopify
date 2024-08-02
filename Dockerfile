@@ -7,4 +7,6 @@ WORKDIR /app
 COPY web .
 RUN npm install
 RUN cd frontend && npm install && npm run build
+RUN rm database.sqlite
+RUN npm cache clear --force
 CMD ["npm", "run", "serve"]

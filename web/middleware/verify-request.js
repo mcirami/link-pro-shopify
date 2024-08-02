@@ -30,6 +30,8 @@ export default function verifyRequest(
       return redirectToAuth(req, res, app);
     }
 
+    console.log(session)
+
     if (session?.isActive()) {
       try {
         if (billing.required) {

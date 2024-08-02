@@ -12,13 +12,13 @@
     "node": ">=14.13.1"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.0",
-    "@shopify/shopify-api": "^5.0.0",
+    "@apollo/client": "^3.7.1",
+    "@shopify/shopify-api": "^5.2.0",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
-    "express": "^4.17.3",
+    "express": "^4.18.2",
     "graphql": "^16.6.0",
     "serve-static": "^1.14.1"
   },

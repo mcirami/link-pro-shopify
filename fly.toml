@@ -9,7 +9,7 @@ processes = []
   PORT = 8081
   HOST = "https://linkpro.fly.dev"
   SHOPIFY_API_KEY = "0c0c550ed3f1008d7e62c6b2aff0e206"
-  SCOPES = "read_products,write_products"
+  SCOPES = "read_products,read_product_listings"
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
